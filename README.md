@@ -19,7 +19,7 @@ dependencyResolutionManagement {
 
 ```
 dependencies {
-	        implementation 'com.github.SenyaFresh:compose-advanced-animations:1.0'
+	        implementation 'com.github.SenyaFresh:compose-advanced-animations:{$version}'
 }
 ```
 
