@@ -37,7 +37,7 @@ vec3 firework(vec2 uv, vec2 p, float seed, float t) {
     vec3 en = hash31(seed);
     vec3 col = en;
     
-    for (float i=0.; i < 70.; i++) {
+    for (float i=0.; i < 50.; i++) {
         // random direction
     	vec3 n = hash31(i) - .5;
         // particle position
@@ -65,7 +65,9 @@ vec3 firework(vec2 uv, vec2 p, float seed, float t) {
 
 
 vec4 main(in vec2 fragCoord) {
-	vec2 uv = fragCoord.xy / iResolution.xy;
+	vec2 uv = fragCoord;
+    uv.y = iResolution.y - fragCoord.y;
+    uv /= iResolution.xy;
 	uv -= .5;
     uv.x *= iResolution.x/iResolution.y;
     float t = iTime*.5;
