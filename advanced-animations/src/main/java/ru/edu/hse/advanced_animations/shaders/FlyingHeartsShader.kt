@@ -35,14 +35,15 @@ vec4 main(in vec2 fragCoord) {
     uv /= iResolution.xy;
     uv -= 0.5;
     uv.x *= iResolution.x/iResolution.y;
+    uv *= 3.;
 
     vec3 finalColor = vec3(0.0, 0.0, 0.0) + uv.y * vec3(0.180,0.000,0.400); 
     
     // Grid settings
     float gridX = 5.;
     float gridY = 5.;  // Number of hearts in X and Y direction
-    for (float i = 0.; i < gridX; i++) {
-        for (float j = 0.; j < gridY; j++) {
+    for (float i = 0.; i < 5.; i++) {
+        for (float j = 0.; j < 5.; j++) {
             // Compute heart position in the grid
             vec2 heartPos = vec2(i - gridX / 2., j - gridY / 2.) * 0.8;
 
